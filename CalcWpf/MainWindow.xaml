@@ -34,6 +34,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Background="GhostWhite" Content="+" FontSize="20" />
 
 
                 <Button Click="Button_Click" Grid.Column="0" Grid.Row="0" Background="GhostWhite" Content="+" FontSize="20" />
