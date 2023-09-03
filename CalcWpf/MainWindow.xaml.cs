@@ -1,9 +1,7 @@
-<<<<<<< HEAD
+
 ﻿using CalcWpf.FuncSMat;
 using System;
-=======
-﻿using System;
->>>>>>> 8d59ac3975afe35bafbca232fb882afb3e85cdf2
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,7 +27,7 @@ namespace CalcWpf
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -40,7 +38,6 @@ namespace CalcWpf
         {
 
         }
-=======
->>>>>>> 8d59ac3975afe35bafbca232fb882afb3e85cdf2
+
     }
 }
