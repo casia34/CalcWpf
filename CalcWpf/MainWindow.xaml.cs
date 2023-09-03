@@ -23,21 +23,38 @@ namespace CalcWpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool flagToUseTheSecondVar = false;
         public MainWindow()
         {
             InitializeComponent();
         }
 
+     
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MatsMetod.somma(1,2.701f);
+            flagToUseTheSecondVar = true;
+            Operetor.Text += "+";
         }
 
         private void NumberOne_Click(object sender, RoutedEventArgs e)
         {
-
+            if (flagToUseTheSecondVar)
+            {
+                ValueB.Text += "1";
+            }
+            else
+            {
+                ValueA.Text += "1";
+            }
+           
         }
 
+        private void Result_Click(object sender, RoutedEventArgs e)
+        {
+            ValueA.Text = MatsMetod.somma(int.Parse(ValueA.Text),int.Parse(ValueB.Text)).ToString();
+            ValueB.Text = "";
+            Operetor.Text = "";
+        }
     }
 }
