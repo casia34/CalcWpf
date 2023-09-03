@@ -38,6 +38,7 @@
 
                 <Button Click="Button_Click" Grid.Column="0" Grid.Row="0" Background="GhostWhite" Content="+" FontSize="20" />
 
+
                 <Button Grid.Column="1" Grid.Row="0" Background="GhostWhite" Content="-" FontSize="20" />
                 <Button Grid.Column="2" Grid.Row="0" Background="GhostWhite" Content="/" FontSize="12" />
                 <Button Grid.Column="3" Grid.Row="0" Background="GhostWhite" Content="X" FontSize="12" />
@@ -59,7 +60,9 @@
                 </Grid.RowDefinitions>
                 
 
+
                 <Button x:Name="NumberOne" Click="NumberOne_Click" Grid.Column="0" Grid.Row="1" Background="GhostWhite" Content="1" FontSize="25"   />
+
 
                 <Button Grid.Column="1" Grid.Row="1" Background="GhostWhite" Content="2" FontSize="25"  />
                 <Button Grid.Column="2" Grid.Row="1" Background="GhostWhite" Content="3" FontSize="25"  />
