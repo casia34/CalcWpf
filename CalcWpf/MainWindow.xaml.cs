@@ -24,6 +24,14 @@ namespace CalcWpf
     public partial class MainWindow : Window
     {
         bool flagToUseTheSecondVar = false;
+        enum Current
+        {
+            Somm,
+            Menus,
+            Multy,
+            Divd
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,11 +39,7 @@ namespace CalcWpf
 
      
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            flagToUseTheSecondVar = true;
-            Operetor.Text += "+";
-        }
+       
 
         private void NumberOne_Click(object sender, RoutedEventArgs e)
         {
@@ -55,6 +59,12 @@ namespace CalcWpf
             ValueA.Text = MatsMetod.somma(int.Parse(ValueA.Text),int.Parse(ValueB.Text)).ToString();
             ValueB.Text = "";
             Operetor.Text = "";
+        }
+
+        private void Piu_Button_Click(object sender, RoutedEventArgs e)
+        {
+            flagToUseTheSecondVar = true;
+            Operetor.Text += "+";
         }
     }
 }
