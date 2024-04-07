@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace CalcWpf
 {
@@ -26,20 +27,19 @@ namespace CalcWpf
     public partial class MainWindow : Window
     {
         bool flagToUseTheSecondVar = false;
-        enum Current
-        {
-            Somm,
-            Menus,
-            Multy,
-            Divd
-        }
-
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
         public MainWindow()
         {
             InitializeComponent();
             
-          var FileNames = Directory.GetFiles( Assembly.GetAssembly(typeof(MatsMetod)).Location.Split("bin")[0] + @"Canzoni");
-         
+            var FileNames = Directory.GetFiles(Assembly.GetAssembly(typeof(MatsMetod)).Location.Split("bin")[0] + @"Canzoni");
+            List<string> FileNamesList = new List<string>();
+            FileNamesList.Add("Nessuna canzone selezionata");
+            foreach ( string fileName in FileNames)
+            {
+                FileNamesList.Add(Path.GetFileName(fileName));
+            }
+            CombMusic.ItemsSource = FileNamesList;
         }
 
 
@@ -88,11 +88,6 @@ namespace CalcWpf
         private void Piu_Button_Click(object sender, RoutedEventArgs e)
         {
 
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-
-            player.SoundLocation = @"..\\Canzoni\\Daft Punk - One More Time (Official Video).wav";
-            player.Play();
-
             flagToUseTheSecondVar = true;
             Operetor.Text += "+";
         }
@@ -113,6 +108,12 @@ namespace CalcWpf
         {
             flagToUseTheSecondVar = true;
             Operetor.Text += "*";
+        }
+
+        private void Play_Click(object sender, RoutedEventArgs e)
+        {
+            player.SoundLocation = Assembly.GetAssembly(typeof(MatsMetod)).Location.Split("bin")[0] + @"Canzoni\"+CombMusic.SelectedItem.ToString();
+            player.Play();
         }
     }
 }
